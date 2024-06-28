@@ -1,6 +1,6 @@
 function Log({ turns }) {
   return (
-    <div id="log">
+    <ol id="log">
       <h2>Game Log</h2>
       <ol>
         {turns.map((turn, index) => (
@@ -11,7 +11,7 @@ function Log({ turns }) {
           </li>
         ))}
       </ol>
-    </div>
+    </ol>
   );
 }
 

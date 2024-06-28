@@ -8,7 +8,7 @@ function GameBoard({ onSelectSquare, board, winnerUser }) {
               <li key={colIndex}>
                 <button
                   onClick={() => onSelectSquare(rowIndex, colIndex)}
-                  disabled={playerSymbol !== null || winnerUser !== null}
+                  disabled={playerSymbol !== null}
                 >
                   {playerSymbol}
                 </button>

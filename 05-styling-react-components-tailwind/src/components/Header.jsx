@@ -8,10 +8,10 @@ export default function Header() {
         src={logo}
         alt="A canvas"
       />
-      <h1 className="text-4xl font-semibold tracking-widest text-center uppercase text-amber-800">
+      <h1 className="text-4xl font-semibold tracking-widest text-center uppercase text-amber-800 font-title">
         ReactArt
       </h1>
-      <p>A community of artists and art-lovers.</p>
+      <p className="text-stone-500">A community of artists and art-lovers.</p>
     </header>
   );
 }

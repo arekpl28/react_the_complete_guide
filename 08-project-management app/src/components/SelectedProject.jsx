@@ -1,7 +1,13 @@
 import Button from "./Button";
 import Tasks from "./Tasks";
 
-function SelectedProject({ project, onDelete }) {
+function SelectedProject({
+  project,
+  onDelete,
+  onAddTask,
+  onDeleteTask,
+  tasks,
+}) {
   const formattedDate = new Date(project.dueDate).toLocaleDateString("pl-PL", {
     year: "numeric",
     month: "long",
@@ -16,14 +22,13 @@ function SelectedProject({ project, onDelete }) {
             {project.title}
           </h1>
           <Button onClick={onDelete}>Delete</Button>
-          {/* <button>Delete</button> */}
         </div>
         <p className="mb-4 text-stone-400">{formattedDate}</p>
         <p className="text-stone-600 whitespace-pre-wrap">
           {project.description}
         </p>
       </header>
-      <Tasks />
+      <Tasks onAdd={onAddTask} onDelete={onDeleteTask} tasks={tasks} />
     </div>
   );
 }

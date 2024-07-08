@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function SelectedProject({ project }) {
+function SelectedProject({ project, onDelete }) {
   const formattedDate = new Date(project.dueDate).toLocaleDateString("pl-PL", {
     year: "numeric",
     month: "long",
@@ -14,7 +14,7 @@ function SelectedProject({ project }) {
           <h1 className="text-3xl font-bold text-stone-600 mb-2">
             {project.title}
           </h1>
-          <Button>Delete</Button>
+          <Button onClick={onDelete}>Delete</Button>
           {/* <button>Delete</button> */}
         </div>
         <p className="mb-4 text-stone-400">{formattedDate}</p>

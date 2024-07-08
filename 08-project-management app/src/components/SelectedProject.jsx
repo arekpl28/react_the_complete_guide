@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Tasks from "./Tasks";
 
 function SelectedProject({ project, onDelete }) {
   const formattedDate = new Date(project.dueDate).toLocaleDateString("pl-PL", {
@@ -22,7 +23,7 @@ function SelectedProject({ project, onDelete }) {
           {project.description}
         </p>
       </header>
-      TASKS
+      <Tasks />
     </div>
   );
 }

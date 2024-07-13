@@ -5,7 +5,7 @@ function QuestionTimer({ timeout, onTimeout, mode }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      onTimeout();
+      if (onTimeout) onTimeout();
     }, timeout);
     return () => clearTimeout(timer);
   }, [timeout, onTimeout]);

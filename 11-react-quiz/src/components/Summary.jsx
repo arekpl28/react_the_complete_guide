@@ -36,13 +36,23 @@ function Summary({ userAnswers }) {
       <ol>
         {userAnswers.map((answer, index) => {
           let cssClass = "user-answer";
-
+          let correctAnswersFromQUESTION = null;
           if (answer === null) {
             cssClass += " skipped";
+            correctAnswersFromQUESTION = (
+              <p className="user-answer correct question">
+                {QUESTION[index].answers[0]}
+              </p>
+            );
           } else if (answer === QUESTION[index].answers[0]) {
             cssClass += " correct";
           } else {
             cssClass += " wrong";
+            correctAnswersFromQUESTION = (
+              <p className="user-answer correct question">
+                {QUESTION[index].answers[0]}
+              </p>
+            );
           }
 
           return (
@@ -50,6 +60,7 @@ function Summary({ userAnswers }) {
               <h3>{index + 1}</h3>
               <p className="question">{QUESTION[index].text}</p>
               <p className={cssClass}>{answer ?? "Skipped"}</p>
+              {correctAnswersFromQUESTION}
             </li>
           );
         })}

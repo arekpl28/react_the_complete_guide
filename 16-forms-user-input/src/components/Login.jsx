@@ -1,6 +1,13 @@
+import { useState } from "react";
+
 export default function Login() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("dziala");
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2>Login</h2>
 
       <div className="control-row">

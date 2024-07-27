@@ -22,11 +22,16 @@ export default function Login() {
       ...prevValues,
       [identifier]: event.target.value,
     }));
+
+    setDidEdit((prevEdit) => ({
+      ...prevEdit,
+      [identifier]: false,
+    }));
   }
 
   function handleInputBlur(identifier) {
-    setDidEdit((prevState) => ({
-      ...prevState,
+    setDidEdit((prevEdit) => ({
+      ...prevEdit,
       [identifier]: true,
     }));
   }

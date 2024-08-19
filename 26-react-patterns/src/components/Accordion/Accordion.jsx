@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import AccordionItem from "./AccordionItem";
+import AccordionTitle from "./AccordionTitle";
+import AccordionContent from "./AccordionContent";
 
 const AccordionContext = createContext();
 
@@ -17,22 +19,12 @@ export function useAccordionContext() {
 function Accordion({ children, className }) {
   const [openItemId, setOpenItemId] = useState();
 
-  //   function openItem(id) {
-  //     setOpenItemId(id);
-  //   }
-
-  //   function closeItem(id) {
-  //     setOpenItemId(null);
-  //   }
-
   function toggleItem(id) {
     setOpenItemId((prev) => (openItemId === id ? null : id));
   }
 
   const contextValue = {
     openItemId,
-    // openItem,
-    // closeItem,
     toggleItem,
   };
 
@@ -44,5 +36,7 @@ function Accordion({ children, className }) {
 }
 
 Accordion.Item = AccordionItem;
+Accordion.Title = AccordionTitle;
+Accordion.Content = AccordionContent;
 
 export default Accordion;
